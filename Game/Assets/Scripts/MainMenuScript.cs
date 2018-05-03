@@ -15,11 +15,12 @@ public class MainMenuScript : MonoBehaviour {
             
 
 
-    public void PlayButton ()
+    public void PlayButton () //Start the Game
     {
         enemieS.SetActive(true);
         worlD.SetActive(false);
-        
+        //TODO: Activate main menu in Player Script
+
     }
 
     public void ExitButton ()

@@ -9,7 +9,7 @@ public class PlayerScript : MonoBehaviour {
 
     [SerializeField]
     int playerHits;
-
+    public GameObject canvasGameOver;
 
 	// Use this for initialization
 	void Start () {
@@ -30,10 +30,13 @@ public class PlayerScript : MonoBehaviour {
 
     void GameOver ()
     {
+        canvasGameOver.SetActive(true);
         Debug.Log("Game Over!");
         Destroy(gameObject);
         //TODO: Visa gameOver menu
-        //TODO: Sluta pwana fiender
+        //TODO: Sluta spwana fiender
+        
+
 
 
     }
