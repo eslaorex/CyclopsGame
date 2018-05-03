@@ -7,28 +7,23 @@ public class EnemyAI : MonoBehaviour {
     public float speed;
     PlayerScript playerScript;
     GameObject player;
-    
-    //ScoreScript scoreScript;
-    //Sumscore sumScore;
-    //ScoreScript scoreScript;
-    //public GameObject otherGameObject;
-
-    //public GameObject enemy;
-    //public Transform enemyPos;
-    //private float repeatRate = 0.2f;
-
+    public bool isPlayerAlive = true;
 
     private void Start()
     {
         player = GameObject.Find("PlayerCube");
         playerScript = player.GetComponent<PlayerScript>();
-      //  scoreScript = otherGameObject.GetComponent<ScoreScript>();
+   
     }
 
     private void Update()
     {
-        float step = speed * Time.deltaTime;
-        transform.position = Vector3.MoveTowards(transform.position, player.transform.position, step);
+        if (isPlayerAlive)
+        {
+            float step = speed * Time.deltaTime;
+            transform.position = Vector3.MoveTowards(transform.position, player.transform.position, step);
+        }
+            
     }
 
 
@@ -40,7 +35,7 @@ public class EnemyAI : MonoBehaviour {
         {
             DamagePlayer();
             DestroySelf();
-            //EnemySpawner();
+            
         }
         
     }
@@ -53,18 +48,13 @@ public class EnemyAI : MonoBehaviour {
 
     public void DestroySelf()
     {
+        ScoreScript.scoreValue += 10;
         Destroy(gameObject);
-    
-        //TODO: Score add 10
+        //TODO: explosion animation?
+
     }
 
-    /*
-    void EnemySpawner()
-    {
-        InvokeRepeating("EnemySpawner", 0.5f, repeatRate);
-        Instantiate(enemy, enemyPos.position, enemyPos.rotation);
-    }
-    */
+ 
  
 
 

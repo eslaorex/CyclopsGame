@@ -171,7 +171,7 @@ Prefab:
       objectReference: {fileID: 1798701423}
     - target: {fileID: 1702413394967474, guid: e2835ff5649ea2d4e9cb08dd689b14a5, type: 2}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: e2835ff5649ea2d4e9cb08dd689b14a5, type: 2}
@@ -252,7 +252,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 476225102}
+      - m_Target: {fileID: 698995103}
         m_MethodName: PlayButton
         m_Mode: 1
         m_Arguments:
@@ -490,7 +490,7 @@ Prefab:
     - target: {fileID: 114254819177557720, guid: e2835ff5649ea2d4e9cb08dd689b14a5,
         type: 2}
       propertyPath: speed
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 23474836168551484, guid: e2835ff5649ea2d4e9cb08dd689b14a5,
         type: 2}
@@ -597,7 +597,7 @@ Prefab:
       objectReference: {fileID: 2100000, guid: 6e504bfd1a2bf35499d214d7bf54a18c, type: 2}
     - target: {fileID: 1702413394967474, guid: e2835ff5649ea2d4e9cb08dd689b14a5, type: 2}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: e2835ff5649ea2d4e9cb08dd689b14a5, type: 2}
@@ -613,7 +613,6 @@ GameObject:
   - component: {fileID: 476225105}
   - component: {fileID: 476225104}
   - component: {fileID: 476225103}
-  - component: {fileID: 476225102}
   m_Layer: 5
   m_Name: MainMenuCanvas
   m_TagString: Untagged
@@ -636,26 +635,13 @@ RectTransform:
   - {fileID: 588974366}
   - {fileID: 1921701447}
   m_Father: {fileID: 698995102}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 49.999996, y: 49.999996}
   m_SizeDelta: {x: 1010, y: 578}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &476225102
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 476225100}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5c1b1cfb6c2b6b94286c43bee8dfd5e1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  enemieS: {fileID: 508038740}
-  worlD: {fileID: 698995101}
 --- !u!114 &476225103
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -728,7 +714,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &508038741
 Transform:
   m_ObjectHideFlags: 0
@@ -741,9 +727,9 @@ Transform:
   m_Children:
   - {fileID: 1471292432}
   - {fileID: 1798701423}
+  - {fileID: 954918173}
   - {fileID: 759767859}
   - {fileID: 993529130}
-  - {fileID: 954918173}
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -753,7 +739,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 508038740}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0f9e2bac9f8037b4fa7d47f6163298c6, type: 3}
   m_Name: 
@@ -764,10 +750,10 @@ MonoBehaviour:
   - {fileID: 993529129}
   - {fileID: 954918166}
   - {fileID: 759767852}
-  spawnValues: {x: 10, y: 23, z: 23}
+  spawnValues: {x: 50, y: 10, z: 20}
   spawnWait: 0
-  spawnMostWait: 0.5
-  spawnLeastWait: 0.2
+  spawnMostWait: 0.3
+  spawnLeastWait: 0
   startWait: 0
   stop: 0
 --- !u!1 &565168389
@@ -847,7 +833,7 @@ GameObject:
   - component: {fileID: 583782829}
   - component: {fileID: 583782828}
   m_Layer: 5
-  m_Name: PlayButton
+  m_Name: PlayAgainButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -911,9 +897,20 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1670148542}
-        m_MethodName: PlayButton
+      - m_Target: {fileID: 698995103}
+        m_MethodName: RestartLevel
         m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 698995101}
+        m_MethodName: SetActive
+        m_Mode: 6
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -1033,7 +1030,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 476225102}
+      - m_Target: {fileID: 698995103}
         m_MethodName: ExitButton
         m_Mode: 1
         m_Arguments:
@@ -1161,6 +1158,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 698995102}
+  - component: {fileID: 698995103}
   m_Layer: 5
   m_Name: MainMenu
   m_TagString: Untagged
@@ -1178,8 +1176,8 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 5.24}
   m_LocalScale: {x: 0.0039775735, y: 0.007906141, z: 0.007906141}
   m_Children:
-  - {fileID: 1670148541}
   - {fileID: 476225101}
+  - {fileID: 1670148541}
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1188,6 +1186,20 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &698995103
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 698995101}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5c1b1cfb6c2b6b94286c43bee8dfd5e1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemieS: {fileID: 508038740}
+  worlD: {fileID: 476225100}
+  canvasScore: {fileID: 1502760949}
 --- !u!1 &759767852
 GameObject:
   m_ObjectHideFlags: 0
@@ -1209,7 +1221,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &759767853
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1267,7 +1279,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a8b1cbe30b746164c9e25fb9dfcac181, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 2
+  speed: 4
+  isPlayerAlive: 1
 --- !u!23 &759767856
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -1334,7 +1347,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 508038741}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &933041360
 GameObject:
@@ -1453,7 +1466,6 @@ GameObject:
   - component: {fileID: 954918169}
   - component: {fileID: 954918168}
   - component: {fileID: 954918167}
-  - component: {fileID: 954918174}
   m_Layer: 0
   m_Name: EnemyCube (4)
   m_TagString: Enemy
@@ -1518,7 +1530,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a8b1cbe30b746164c9e25fb9dfcac181, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 2
+  speed: 3
+  isPlayerAlive: 1
 --- !u!23 &954918170
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -1585,29 +1598,8 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 508038741}
-  m_RootOrder: 4
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &954918174
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 954918166}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0f9e2bac9f8037b4fa7d47f6163298c6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  enemies:
-  - {fileID: 954918166}
-  - {fileID: 993529129}
-  - {fileID: 759767852}
-  spawnValues: {x: 2, y: 4, z: 5}
-  spawnWait: 0
-  spawnMostWait: 0
-  spawnLeastWait: 0
-  startWait: 0
-  stop: 0
 --- !u!1 &993529129
 GameObject:
   m_ObjectHideFlags: 0
@@ -1629,7 +1621,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &993529130
 Transform:
   m_ObjectHideFlags: 0
@@ -1642,7 +1634,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 508038741}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &993529131
 MonoBehaviour:
@@ -1702,6 +1694,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 2
+  isPlayerAlive: 1
 --- !u!23 &993529134
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -1807,7 +1800,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1753682911377608, guid: 09f60727f64c7f24da77cfb67b6e0460, type: 2}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 09f60727f64c7f24da77cfb67b6e0460, type: 2}
@@ -2264,7 +2257,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1670148542}
+      - m_Target: {fileID: 698995103}
         m_MethodName: ExitButton
         m_Mode: 1
         m_Arguments:
@@ -2394,7 +2387,7 @@ Prefab:
     - target: {fileID: 114254819177557720, guid: e2835ff5649ea2d4e9cb08dd689b14a5,
         type: 2}
       propertyPath: speed
-      value: 2
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 23474836168551484, guid: e2835ff5649ea2d4e9cb08dd689b14a5,
         type: 2}
@@ -2403,7 +2396,7 @@ Prefab:
       objectReference: {fileID: 2100000, guid: 6e504bfd1a2bf35499d214d7bf54a18c, type: 2}
     - target: {fileID: 1702413394967474, guid: e2835ff5649ea2d4e9cb08dd689b14a5, type: 2}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: e2835ff5649ea2d4e9cb08dd689b14a5, type: 2}
@@ -2418,27 +2411,6 @@ Transform:
   m_PrefabParentObject: {fileID: 4249678164387696, guid: 09f60727f64c7f24da77cfb67b6e0460,
     type: 2}
   m_PrefabInternal: {fileID: 1060787629}
---- !u!114 &1471292436
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1471292428}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0f9e2bac9f8037b4fa7d47f6163298c6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  enemies:
-  - {fileID: 1471292428}
-  - {fileID: 1798701422}
-  - {fileID: 993529129}
-  spawnValues: {x: 4, y: 2, z: 3}
-  spawnWait: 0
-  spawnMostWait: 2
-  spawnLeastWait: 0.5
-  startWait: 1
-  stop: 0
 --- !u!1 &1502760949
 GameObject:
   m_ObjectHideFlags: 0
@@ -2456,7 +2428,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1502760950
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2532,7 +2504,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 4.49, y: 2.73}
+  m_AnchoredPosition: {x: 4.02, y: 2.39}
   m_SizeDelta: {x: 1010, y: 578}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1512987829
@@ -2917,7 +2889,6 @@ GameObject:
   - component: {fileID: 1670148540}
   - component: {fileID: 1670148539}
   - component: {fileID: 1670148538}
-  - component: {fileID: 1670148542}
   m_Layer: 5
   m_Name: GameOverMenuCanvas
   m_TagString: Untagged
@@ -2997,26 +2968,13 @@ RectTransform:
   - {fileID: 1610598488}
   - {fileID: 1322110411}
   m_Father: {fileID: 698995102}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 49.999996, y: 49.999996}
   m_SizeDelta: {x: 1010, y: 578}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1670148542
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1670148537}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5c1b1cfb6c2b6b94286c43bee8dfd5e1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  enemieS: {fileID: 508038740}
-  worlD: {fileID: 698995101}
 --- !u!1 &1741303881
 GameObject:
   m_ObjectHideFlags: 0
@@ -3290,7 +3248,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1798701423
 Transform:
   m_ObjectHideFlags: 0
@@ -3333,6 +3291,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 2
+  isPlayerAlive: 1
 --- !u!23 &1798701426
 MeshRenderer:
   m_ObjectHideFlags: 0
