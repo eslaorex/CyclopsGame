@@ -1,14 +1,14 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-//using UnityEngine.SceneManagement;
+using UnityEngine.SceneManagement;
 
 public class MainMenuScript : MonoBehaviour {
 
     public GameObject enemieS;
     public GameObject worlD;
     public GameObject canvasScore;
-    
+    public int sceneToLoad;
 
  
 
@@ -28,6 +28,7 @@ public class MainMenuScript : MonoBehaviour {
 
     public void RestartLevel()
     {
-        Application.LoadLevel(Application.loadedLevel);
+        //Application.LoadLevel(Application.loadedLevel);
+        SceneManager.LoadScene(sceneToLoad);
     }
 }

@@ -11,7 +11,7 @@ public class PlayerScript : MonoBehaviour {
     public GameObject canvasGameOver;
     EnemyAI enemyAI;
 
-    MainMenuScript mainMenuScript; 
+    //MainMenuScript mainMenuScript; 
     
 
     // Use this for initialization
@@ -39,8 +39,9 @@ public class PlayerScript : MonoBehaviour {
     void GameOver ()
     {
         canvasGameOver.SetActive(true);
-        mainMenuScript.enemieS.SetActive(false);  //NOT WORKING
-        enemyAI.isPlayerAlive = false;
+        //mainMenuScript.enemieS.SetActive(false);  //NOT WORKING
+        enemyAI.isPlayerAlive = false; // NOT WORKING
+        FindObjectOfType<EnemyAI>().isPlayerAlive = false; //NOT WORKING
 
         Debug.Log("Game Over!");
         Destroy(gameObject);
