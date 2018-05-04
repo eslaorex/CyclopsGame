@@ -42,7 +42,7 @@ public class PlayerScript : MonoBehaviour {
         //mainMenuScript.enemieS.SetActive(false);  //NOT WORKING
         enemyAI.isPlayerAlive = false; // NOT WORKING
         FindObjectOfType<EnemyAI>().isPlayerAlive = false; //NOT WORKING
-
+ 
         Debug.Log("Game Over!");
         Destroy(gameObject);
         //TODO: Visa gameOver menu
